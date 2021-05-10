@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.david.mc.domain.Categoria;
 import com.david.mc.services.CategoriaService;
 
-import javassist.tools.rmi.ObjectNotFoundException;
-
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
