@@ -14,7 +14,6 @@ import com.david.mc.domain.enums.EstadoPagamento;
 import com.david.mc.repositories.ItemPedidoRepository;
 import com.david.mc.repositories.PagamentoRepository;
 import com.david.mc.repositories.PedidoRepository;
-import com.david.mc.repositories.ProdutoRepository;
 import com.david.mc.services.exceptions.ObjectNotFoundException;
 
 
