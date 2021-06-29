@@ -11,7 +11,6 @@ import com.david.mc.domain.ItemPedido;
 import com.david.mc.domain.PagamentoComBoleto;
 import com.david.mc.domain.Pedido;
 import com.david.mc.domain.enums.EstadoPagamento;
-import com.david.mc.repositories.ClienteRepository;
 import com.david.mc.repositories.ItemPedidoRepository;
 import com.david.mc.repositories.PagamentoRepository;
 import com.david.mc.repositories.PedidoRepository;
@@ -39,6 +38,9 @@ public class PedidoService {
 	
 	@Autowired
 	private ClienteService clienteService;
+	
+	@Autowired
+	private EmailService emailService;
 	
 	public Pedido find(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
@@ -69,7 +71,7 @@ public class PedidoService {
 		}
 		
 		itemPedidoRepository.saveAll(obj.getItens());
-		System.out.println(obj);
+		emailService.sendOrderConfirmationEmail(obj);
 		return obj;
 	}
 }
